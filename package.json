@@ -2,7 +2,7 @@
   "name": "wedding",
   "version": "1.0.0",
   "description": "Wedding anouncement and useful informations for guests",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

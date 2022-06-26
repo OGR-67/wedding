@@ -1,7 +1,7 @@
-import mongoose, { mongo } from "mongoose";
-import { guestSchema } from "../models";
+import mongoose from "mongoose";
+import { GuestSchema } from "../models/guestSchema.mjs";
 
-const Guest = mongoose.model("Guest", guestSchema);
+const Guest = mongoose.model("Guest", GuestSchema);
 
 export const addNewGuest = (req, res) => {
   let newGuest = new Guest(req.body);
@@ -50,7 +50,7 @@ export const updateGuestByID = (req, res) => {
 };
 
 export const deleteGuestByID = (req, res) => {
-  Guest.remove({ _id: req.params.guestID }, (err, contact) => {
+  Guest.deleteOne({ _id: req.params.guestID }, (err, contact) => {
     if (err) {
       res.send(err);
     } else {

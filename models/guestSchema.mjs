@@ -2,12 +2,27 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-export const guestSchema = new Schema({
+const AdressSchema = new Schema({
+  city: {
+    type: String,
+    required: "Entrer votre ville",
+  },
+  street: {
+    type: String,
+    required: "Entrer votre rue",
+  },
+  houseNumber: {
+    type: String,
+    required: "Entrer votre numero",
+  },
+});
+
+export const GuestSchema = new Schema({
   firstName: {
     type: String,
     required: "Entrer votre prénom",
   },
-  lastname: {
+  lastName: {
     type: String,
     required: "Entrer votre nom",
   },
@@ -18,6 +33,10 @@ export const guestSchema = new Schema({
   phone: {
     type: Number,
     required: "Entrer votre numéro",
+  },
+  adress: {
+    type: AdressSchema,
+    required: "Entrer une adresse valide",
   },
   created_date: {
     type: Date,
