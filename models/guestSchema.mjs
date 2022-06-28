@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const AdressSchema = new Schema({
+export const AdressSchema = new Schema({
   city: {
     type: String,
     required: "Entrer votre ville",
