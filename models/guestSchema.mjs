@@ -2,41 +2,30 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-export const AdressSchema = new Schema({
-  city: {
-    type: String,
-    required: "Entrer votre ville",
-  },
-  street: {
-    type: String,
-    required: "Entrer votre rue",
-  },
-  houseNumber: {
-    type: String,
-    required: "Entrer votre numero",
-  },
-});
-
 export const GuestSchema = new Schema({
   firstName: {
     type: String,
-    required: "Entrer votre prénom",
+    required: "No first name can be found.",
   },
   lastName: {
     type: String,
-    required: "Entrer votre nom",
+    required: "No last name can be found.",
   },
   email: {
     type: String,
-    required: "Entrer une adresse E-mail",
+    required: "No email can be found.",
+    unique: true,
   },
   phone: {
     type: Number,
-    required: "Entrer votre numéro",
+    required: "No phone number can be found.",
   },
-  adress: {
-    type: AdressSchema,
-    required: "Entrer une adresse valide",
+  is_accompanied: {
+    type: String,
+  },
+  childrenNumber: {
+    type: Number,
+    required: "No children number number can be found.",
   },
   created_date: {
     type: Date,

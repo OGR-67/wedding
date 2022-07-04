@@ -39,18 +39,14 @@ app
 app
   .route("/register")
   .get((req, res) => {
-   let context = {hotels: ["hotel 1", "hotel 2", "hotel 3", "hotel 4"]}
-   res.render("form.ejs", context)
+   res.render("form.ejs")
   })
+  .post(addNewGuest)
 
 app
-  .route("/guest")
-  .get((req, res, next) => {
-    console.log(`Request from : ${req.originalUrl}`);
-    console.log(`Request type : ${req.method}`);
-    next();
-  }, getAllGuests)
-  .post(addNewGuest);
+  .route("/guests")
+  .get(getAllGuests)
+
 
 app
   .route("/guest/:guestID")

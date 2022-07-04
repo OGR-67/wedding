@@ -1,0 +1,13 @@
+<% guests.forEach(function(guest) {%>
+  <p>
+    <%- guest.firstName %>
+  </p>
+  <p>
+    <%- guest.lastName %>
+  </p>
+  <p>
+    <% let accompagningNumber=guest.childrenNumber %>
+      <% if (guest.is_accompanied==="on" ){ accompagningNumber++;} %>
+        accompagnants: <%- accompagningNumber %>
+  </p>
+  <% }) %>

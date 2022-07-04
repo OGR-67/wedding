@@ -1,15 +1,12 @@
-<form action="" method="post">
-  <input type="text" name="" id="" placeholder="Prénom">
-  <input type="text" name="" id="" placeholder="Nom">
-  <input type="tel" name="" id="" placeholder="Téléphone">
-  <input type="email" name="" id="" placeholder="mail">
-  <input type="number" name="" id="" placeholder="Numéro">
-  <input type="text" name="" id="" placeholder="rue">
-  <input type="text" name="" id="" placeholder="Ville">
-  <input type="checkbox" name="" id="" placeholder = "Je prends un hotel">
-  <select name="" id="">
-    <% hotels.forEach(hotel => {%>
-      <option value=""><%- hotel %></option>
-      <% }); %> 
-  </select>
+<form action="/register" method="post">
+  <input type="text" name="firstName" id="" required placeholder="Prénom" autocomplete="off">
+  <input type="text" name="lastName" id="" required placeholder="Nom">
+  <input type="number" name="phone" id="" required placeholder="Téléphone">
+  <input type="email" name="email" id="" required placeholder="mail">
+  <p>En couple? <input type="checkbox" name="is_accompanied" id="" placeholder="En couple"></p>
+  <input type="number" name="childrenNumber" id="" required placeholder="Nombre d'enfant(s)" value="0">
+  <button type="submit">Je serai de la partie</button>
+  <% if (typeof error !=="undefined" ){ %>
+    <%- error %>
+      <% } %>
 </form>
