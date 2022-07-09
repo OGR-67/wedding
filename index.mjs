@@ -6,7 +6,7 @@ import {
   updateGuestByID,
   deleteGuestByID,
 } from "./controllers/guestController.mjs";
-import { getHotels } from "./controllers/hotelsController.mjs"
+import { getHotels } from "./controllers/hotelsController.mjs";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 
@@ -21,32 +21,25 @@ mongoose.connect("mongodb://localhost/ExpressDB", {
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
+app.route("/").get((req, res) => {
+  let context = { something: 12 };
+  res.render("pages/index.ejs", context);
+});
 
-app
-  .route("/")
-  .get((req, res) => {
-    let context = {something: 12}
-   res.render("index.ejs", context); 
-  })
-
-app
-  .route("/hotels")
-  .get((req, res) => {
-    getHotels(req, res);
-  })
+app.route("/hotels").get((req, res) => {
+  getHotels(req, res);
+});
 
 app
   .route("/register")
   .get((req, res) => {
-   res.render("form.ejs")
+    res.render("pages/form.ejs");
   })
-  .post(addNewGuest)
+  .post(addNewGuest);
 
-app
-  .route("/guests")
-  .get(getAllGuests)
-
+app.route("/guests").get(getAllGuests);
 
 app
   .route("/guest/:guestID")

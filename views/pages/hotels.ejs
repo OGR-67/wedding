@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <%- include("../parts/head") %>
+    <title>Liste d'hotels</title>
+  </head>
+  <body>
+    <header><%- include("../parts/nav") %></header>
+    <main>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <% for (hotel of hotels) { %>
+            <div class="col">
+              <div class="card shadow-sm">
+                <img class="bd-placeholder-img card-img-top" width="100%" height="100%" src="<%= hotel.optimizedThumbUrls.srpDesktop %>">
+    
+                <div class="card-body">
+                  <h5 class="card-text"><%= hotel.name %></h5>
+                  <% if (hotel.ratePlan !== undefined) { %>
+                  <p class="card-text"><%= hotel.ratePlan.price.current %></p>
+                  <% } %>
+                  
+                  <p class="card-text">
+                    <%= hotel.address.streetAddress %>, 
+                  <%= hotel.address.postalCode %> 
+                  <%= hotel.address.locality %>
+                  </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <small class="text-muted"><%= "⭐".repeat(hotel.starRating) %></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }; %>
+
+          </div>
+        </div>
+      </div>
+      
+
+    </main>
+    <footer><%- include("../parts/footer") %></footer>
+  </body>
+
+</html>

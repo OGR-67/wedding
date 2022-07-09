@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <%- include("../parts/head"); %>
+    <title>On se marie!!!</title>
+  </head>
+  <body>
+    <header><%- include("../parts/nav") %></header>
+    <main>
+      <% guests.forEach(function(guest) {%>
+        <p>
+          <%- guest.firstName %>
+        </p>
+        <p>
+          <%- guest.lastName %>
+        </p>
+        <p>
+          <% let accompagningNumber=guest.childrenNumber %>
+            <% if (guest.is_accompanied==="on" ){ accompagningNumber++;} %>
+              accompagnants: <%- accompagningNumber %>
+        </p>
+        <% }) %>
+    </main>
+    <footer>
+      <%- include("../parts/footer") %>
+    </footer>
+  </body>
+
+</html>

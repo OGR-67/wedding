@@ -1,0 +1,16 @@
+body {
+    background-image: url('https://img.freepik.com/free-photo/concept-wedding-accessories-with-wedding-rings-white-wooden-background_185193-69932.jpg?w=2000');
+}
+
+.album {
+    --bs-bg-opacity: 0.8;
+}
+
+.navbar-custom {
+    background-color: whitesmoke;
+    opacity: 0.9;
+}
+
+.error {
+    color: rgb(226, 39, 39);
+}
