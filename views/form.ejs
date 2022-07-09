@@ -1,11 +1,26 @@
 <form action="/register" method="post">
-  <input type="text" name="firstName" id="" required placeholder="Prénom" autocomplete="off">
-  <input type="text" name="lastName" id="" required placeholder="Nom">
-  <input type="number" name="phone" id="" required placeholder="Téléphone">
-  <input type="email" name="email" id="" required placeholder="mail">
-  <p>En couple? <input type="checkbox" name="is_accompanied" id="" placeholder="En couple"></p>
-  <input type="number" name="childrenNumber" id="" required placeholder="Nombre d'enfant(s)" value="0">
-  <button type="submit">Je serai de la partie</button>
+  <p>
+    <input type="text" name="firstName" id="" required placeholder="Prénom" autocomplete="off">
+  </p>
+  <p>
+    <input type="text" name="lastName" id="" required placeholder="Nom" autocomplete="off">
+  </p>
+  <p>
+    <input type="number" name="phone" id="" required placeholder="Téléphone" autocomplete="off">
+  </p>
+  <p>
+    <input type="email" name="email" id="" required placeholder="mail" autocomplete="off">
+  </p>
+  <p>
+    En couple?
+    <input type="checkbox" name="is_accompanied" id="" placeholder="En couple">
+  </p>
+  <p>
+    Nombre d'enfant(s):
+    <input type="number" name="childrenNumber" id="" required value="0" min="0" max="10">
+  </p>
+
+  <button type="submit">Je serai de la partie!</button>
   <% if (typeof error !=="undefined" ){ %>
     <%- error %>
       <% } %>
