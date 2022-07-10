@@ -62,16 +62,8 @@ app
   .delete(deleteGuestByID);
 
 // 404 and 500
-app.use(function(req, res, next) {
-  if (res.status === 404){
-    res.render('pages/404.mjs');
-  }else if (res.status === 500){
-    res.render('pages/500.mjs')
-  }
-});
-
-app.use(function(req, res, next) {
-  res.status(500).render('pages/500.mjs');
+app.route("*").get((req,res) => {
+  res.render("pages/404.ejs")
 });
 
 // listening
