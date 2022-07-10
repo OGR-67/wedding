@@ -9,7 +9,6 @@ const ERRORS_HANDLER = {
 }
 
 function userAlreadyExists (res) {
-  console.log('User already exists');
   let context = {error: "Vous vous êtes déja inscrit. Contacter moi directement pour effectuer une modification."}
   res.render("pages/form.ejs", context)
 }
@@ -23,7 +22,6 @@ export const addNewGuest = (req, res) => {
       let errorCode = err.code;
       let errorHandler = ERRORS_HANDLER[errorCode];
       errorHandler(res)
-      // res.send(err)
     } else {
       res.redirect('/');
     }

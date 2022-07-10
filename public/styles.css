@@ -2,15 +2,12 @@ body {
     background: fixed;
     background-image: url('https://img.freepik.com/free-photo/concept-wedding-accessories-with-wedding-rings-white-wooden-background_185193-69932.jpg?w=2000');
     background-repeat: no-repeat;
-<<<<<<< HEAD
     background-position: center;
 
     /* pour anciens Chrome et Safari */
     -webkit-background-size: cover;
 
     /* version standardisée */
-=======
->>>>>>> guestList
     background-size: cover;
 }
 
