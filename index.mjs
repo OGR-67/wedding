@@ -61,7 +61,7 @@ app
   .put(updateGuestByID)
   .delete(deleteGuestByID);
 
-// 404 and 500
+// 404
 app.route("*").get((req,res) => {
   res.render("pages/404.ejs")
 });
