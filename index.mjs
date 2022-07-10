@@ -63,7 +63,11 @@ app
 
 // 404 and 500
 app.use(function(req, res, next) {
-  res.status(404).render('pages/404.mjs');
+  if (res.status === 404){
+    res.render('pages/404.mjs');
+  }else if (res.status === 500){
+    res.render('pages/500.mjs')
+  }
 });
 
 app.use(function(req, res, next) {
