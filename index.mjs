@@ -28,6 +28,10 @@ app.route("/").get((req, res) => {
   res.render("pages/index.ejs", context);
 });
 
+app.route("/infos").get((req, res) => {
+  res.render("pages/informations.ejs");
+});
+
 app.route("/hotels").get((req, res) => {
   getHotels(req, res);
 });
