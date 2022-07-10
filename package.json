@@ -4,6 +4,7 @@
   "description": "Wedding anouncement and useful informations for guests",
   "main": "index.mjs",
   "scripts": {
+    "start": "index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +15,7 @@
     "express": "^4.18.1",
     "mongodb": "^4.7.0",
     "mongoose": "^6.4.0",
+    "node": "^18.5.0",
     "package.json": "^2.0.1"
   }
 }
