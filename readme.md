@@ -6,3 +6,4 @@ The purpose is to make a simple web app, running with nodeJS and Express, storin
 I've tried to follow as much as I could the MVC architecture principles.
 
 Feel free to give feedbacks.
+
