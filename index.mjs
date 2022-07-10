@@ -13,7 +13,12 @@ import bodyParser from "body-parser";
 const app = express();
 const port = process.env.PORT || 3000;
 
-mongoose.connect("mongodb://localhost/ExpressDB", {
+const userName = process.env.mongoDBUser
+const password = process.env.mongoDBPassword
+const connectionString = `mongodb+srv://${userName}:${password}@wedding.dxud6.mongodb.net/?retryWrites=true&w=majority`
+
+
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
