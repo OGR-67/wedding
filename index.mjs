@@ -28,16 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// 404 and 500
-app.use(function(req, res, next) {
-  res.status(404).render('pages/404.mjs');
-});
-
-app.use(function(req, res, next) {
-  res.status(500).render('pages/500.mjs');
-});
-
-
 // Routes
 app.route("/").get((req, res) => {
   let context = { something: 12 };
@@ -70,6 +60,15 @@ app
   .get(getGuestByID)
   .put(updateGuestByID)
   .delete(deleteGuestByID);
+
+// 404 and 500
+app.use(function(req, res, next) {
+  res.status(404).render('pages/404.mjs');
+});
+
+app.use(function(req, res, next) {
+  res.status(500).render('pages/500.mjs');
+});
 
 // listening
 app.listen(port, () => {
