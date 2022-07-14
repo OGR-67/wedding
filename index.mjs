@@ -1,4 +1,5 @@
 import express from "express";
+import fs from "fs"
 import {
   addNewGuest,
   getAllGuests,
@@ -13,8 +14,19 @@ import bodyParser from "body-parser";
 const app = express();
 const port = process.env.PORT || 3000;
 
-const userName = process.env.mongoDBUser
-const password = process.env.mongoDBPassword
+let userName = String()
+let password = String()
+
+if (process.env.NODE_ENV === 'production'){
+  userName = process.env.mongoDBUser;
+  password = process.env.mongoDBPassword;
+}else{
+  let rawdata = fs.readFileSync('mongo-credentials.json');
+  let credentials = JSON.parse(rawdata);
+  userName = credentials.userName;
+  password = credentials.password;
+}
+
 const connectionString = `mongodb+srv://${userName}:${password}@wedding.dxud6.mongodb.net/?retryWrites=true&w=majority`
 
 
