@@ -41,8 +41,7 @@ mongoose.connect(connectionString, {
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-const basePATH = process.env.PORT ? "/app" : "";
-app.use(express.static(__dirname + basePATH + "/public"));
+app.use(express.static(path.resolve(__dirname, "public/")));
 
 // Routes
 app.route("/").get((req, res) => {
