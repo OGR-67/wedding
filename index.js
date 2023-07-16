@@ -83,12 +83,6 @@ app.route("*").get((req, res) => {
 });
 
 // listening
-if (port !== 3000) {
-  exports.app = functions.https.onRequest(app);
-} else {
-  app.listen(port, () => {
-    console.log(`Application is listening on port: ${port}`);
-  });
-}
-
-
+app.listen(port, () => {
+  console.log(`Application is listening on port: ${port}`);
+});
