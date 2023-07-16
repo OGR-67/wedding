@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <%- include("../parts/head"); %>
+  <title>A propos de ce projet</title>
+</head>
+<body>
+  <header>
+    <%- include("../parts/nav") %>
+  </header>
+
+  <main class="container py-5">
+    <h1>A propos de ce projet</h1>
+    <hr class="my-5">
+  
+    <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 1068px;">
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+        <div class="card card-body">
+          <h5 class="card-title">nodeJS</h5>
+          <p class="card-text">Ayant déja réalisé une application Web sous python avec le framework Django, je voulais mettre a l'épreuve mon adaptabilité en m'orientant sur un backend avec un autre language de programmation. Je me suis naturellement tourné vers Javascript vu que j'avais déjà quelques notions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 50%; top: 0px;">
+        <div class="card p-3">
+          <figure class="p-3 mb-0">
+            <blockquote class="blockquote">
+              <p>Axios</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-muted">
+              Pour interroger l'API pour les <cite title="Source Title">hotels</cite>.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 50%; top: 201px;">
+        <div class="card card-body">
+          <h5 class="card-title">Express</h5>
+          <p class="card-text">J'ai combiné nodeJS avec express car contrairement à Django, avec express tout doit être fait "à la main".</p>
+          <p class="card-text"><small class="text-muted">Architecture MVC</small></p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 386px;">
+        <div class="card card-body">
+          <h5 class="card-title">MongoDB</h5>
+          <p class="card-text">Base de données pour les invités enregistrés</p>
+          <p class="card-text"><small class="text-muted">NoSQL</small></p>
+        </div>
+      </div>
+        
+
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 525px;">
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">Mongoose</h5>
+            <p class="card-text">J'ai utilisé cet ODM afin de structurer les entrées dans la base de données</p>
+            <p class="card-text"><small class="text-muted">Shemas / Models</small></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 703px;">
+        <div class="card p-3 text-end">
+          <figure class="mb-0">
+            <blockquote class="blockquote">
+              <p>EJS</p>
+            </blockquote>
+            <figcaption class="blockquote-footer mb-0 text-muted">
+               Pour la création de <cite title="Source Title">templates</cite>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 842px;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Bootstrap</h5>
+            <p class="card-text">Le but du projet n'étant pas de s'attarder sur le front, j'ai utilisé très largement Bootstrap.</p>
+            <p class="card-text"><small class="text-muted">Avec Masonry en plus sur cette page, redimentionner la page pour voir en action.</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer><%- include("../parts/footer") %></footer>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" defer></script>
+
+</body>
+</html>

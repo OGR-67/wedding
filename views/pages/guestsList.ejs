@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <%- include("../parts/head"); %>
+    <title>On se marie!!!</title>
+  </head>
+  <body>
+    <header><%- include("../parts/nav") %></header>
+    <main>
+      <table class="table table-striped table-hover table-custom text-center">
+        <tr>
+          <td>#</td>
+          <td>Nom</td>
+          <td>Prénom</td>
+          <td>Nombre d'accompagnants</td>
+        </tr>
+        <% let guestCount = 1 %> 
+        <% guests.forEach(function(guest) {%>
+          <tr>
+            <td><%- guestCount %> </td>
+            <td><%- guest.firstName %></td>
+            <td><%- guest.lastName %></td>
+            <% let accompagningNumber=guest.childrenNumber %>
+              <% if (guest.is_accompanied==="on" ){ accompagningNumber++;} %>
+            <td><%- accompagningNumber %></td>
+          </tr>
+          <% guestCount++ %> 
+          <% }) %>        
+      </table>
+      
+    </main>
+    <footer>
+      <%- include("../parts/footer") %>
+    </footer>
+  </body>
+
+</html>

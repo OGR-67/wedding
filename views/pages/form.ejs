@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include("../parts/head"); %>
+    <title>On se marie!!!</title>
+</head>
+
+<body class="text-center">
+  <header>
+    <%- include("../parts/nav") %>
+  </header>
+  <main class="form-signin w-100 m-auto d-flex justify-content-center ">
+    <form action="/register" method="post">
+      <h1 class="h3 mb-3 fw-normal">Confirmer votre présence</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingFirstName" name="firstName" required placeholder="Jean"
+          autocomplete="off">
+        <label for="floatingFirstName">Prénom</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" name="lastName" id="floatingName" required placeholder="Dupond"
+          autocomplete="off">
+        <label for="floatingName">Nom</label>
+      </div>
+      <div class="form-floating">
+        <input type="tel" class="form-control" name="phone" id="floatingNumber" required placeholder="0123456789"
+          autocomplete="off">
+        <label for="floatingNumber">Téléphone</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" name="email" id="floatingMail" required placeholder="jean@mail.com"
+          autocomplete="off">
+        <label for="floatingMail">E-mail</label>
+      </div>
+
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" name="is_accompanied" id="" placeholder="En couple"> En couple?
+        </label>
+      </div>
+      <div class="checkbox mb-3">
+        <input type="number" name="childrenNumber" id="" required value="0" min="0" max="10"> Nombre d'enfant(s)
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Je serai de la partie!</button>
+      <% if (typeof error !=="undefined" ){ %>
+        <div class="mt-5 mb-3 alert alert-danger" role="alert">
+          <%- error %>
+        </div>
+        <% } %>
+    </form>
+  </main>
+
+  <footer>
+    <%- include("../parts/footer") %>
+  </footer>
+</body>
+
+
+</html>
