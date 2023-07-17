@@ -57,8 +57,8 @@ app.route("/about").get((req, res) => {
   res.render("pages/about.ejs");
 });
 
-app.route("/hotels").get((req, res) => {
-  getHotels(req, res);
+app.route("/hotels").get(async (req, res) => {
+  await getHotels(req, res);
 });
 
 app
