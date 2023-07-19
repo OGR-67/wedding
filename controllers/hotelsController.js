@@ -24,13 +24,13 @@ const getHotels = async (req, res) => {
   try {
     const response = await axios.request(options);
     const results = response.data.properties.slice(0, 10);
-    console.log(results);
     const context = {
       hotels: results,
     };
     res.render("pages/hotels.ejs", context);
   } catch (error) {
     console.error(error);
+    res.redirect('/');
   }
 };
 

@@ -33,4 +33,4 @@ const GuestSchema = new Schema({
   },
 });
 
-exports.GuestSchema = GuestSchema
+module.exports = mongoose.model("Guest", GuestSchema);
